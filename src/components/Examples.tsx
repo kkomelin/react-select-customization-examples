@@ -69,7 +69,7 @@ const Examples: FC = () => {
         />
       </Example>
 
-      <Example name="5. Prevent clearing value on blur and menu close">
+      <Example name="5. Prevent clearing value on blur">
         <Select
           options={demoOptions}
           isClearable={true}
@@ -77,27 +77,13 @@ const Examples: FC = () => {
             IndicatorSeparator: () => null,
             DropdownIndicator
           }}
-          styles={customStyles5}
+          styles={customStyles4}
           inputValue={inputText}
           onInputChange={handleInputChange}
         />
       </Example>
 
-      <Example name="6. Disable displaying options on focus (without search phrase entered)">
-        <Select
-          options={demoOptions}
-          isClearable={true}
-          components={{
-            IndicatorSeparator: () => null,
-            DropdownIndicator
-          }}
-          styles={customStyles5}
-          inputValue={inputText}
-          onInputChange={handleInputChange}
-        />
-      </Example>
-
-      <Example name="7. Display custom data in options">
+      <Example name="6. Display custom data in options">
         <Select
           options={demoOptions}
           isClearable={true}
@@ -111,8 +97,6 @@ const Examples: FC = () => {
           onInputChange={handleInputChange}
         />
       </Example>
-
-
     </>
   )
 }
@@ -166,7 +150,7 @@ const formatOptionLabel = (option: IOption) => {
         {option.label}
       </div>
       <div style={{ textAlign: 'right', color: 'green' }}>
-        {option.population} mln
+        {option.population}m
       </div>
     </div>
   )
