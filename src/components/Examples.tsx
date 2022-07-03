@@ -1,29 +1,113 @@
-import { FC, useState } from "react";
+import debounce from 'lodash.debounce';
+import { FC, useRef, useState } from "react";
+import { useQuery } from 'react-query';
 import Select, { components, InputActionMeta } from "react-select";
 import Example from "./Example";
 
+const API_URL = 'https://countries-for-blog.vercel.app/api/countries';
+
+const apiSearch = async (searchText: string) => {
+  try {
+    const response = await fetch(
+      `${API_URL}${searchText ? '/' + searchText : ''}`,
+    );
+    return await response.json();
+  }
+  catch (error) {
+    console.error(error)
+    return [];
+  }
+}
+
 const Examples: FC = () => {
-  const [inputText, setInputText] = useState<string>("");
+  const [inputText, setInputText] = useState<string>('');
+  const [searchText, setSearchText] = useState<string>('');
+  const [countries, setCountries] = useState<ICountryOption[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const { isLoading: isLoadingData, error, data } = useQuery(
+    searchText && ['countryData', searchText],
+    async () => await apiSearch(searchText),
+    {
+      enabled: !!searchText
+    }
+  );
+
+  const handleSearchDebounced8 = useRef(
+    debounce(searchText => handleSearch(searchText), 300)
+  ).current;
+
+  const handleSearchDebounced9 = useRef(
+    debounce(searchText => setSearchText(searchText), 300)
+  ).current;
+
   const handleInputChange = (inputText: string, meta: InputActionMeta) => {
-    // Prevent outside click from resetting inputText to "".
     if (meta.action !== "input-blur" && meta.action !== "menu-close") {
       setInputText(inputText);
     }
   };
 
+  const handleInputChange7 = (inputText: string, meta: InputActionMeta) => {
+    if (meta.action !== "input-blur" && meta.action !== "menu-close") {
+      setInputText(inputText);
+      handleSearch(inputText)
+    }
+  };
+
+  const handleInputChange8 = (inputText: string, meta: InputActionMeta) => {
+    if (meta.action !== "input-blur" && meta.action !== "menu-close") {
+      setInputText(inputText);
+      handleSearchDebounced8(inputText)
+    }
+  };
+
+  const handleInputChange9 = (inputText: string, meta: InputActionMeta) => {
+    if (meta.action !== "input-blur" && meta.action !== "menu-close") {
+      setInputText(inputText);
+      handleSearchDebounced9(inputText)
+    }
+  };
+
+  const handleSearch = async (searchQuery: string) => {
+    if (searchQuery.trim().length === 0) {
+      setCountries([]);
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      const countries = await apiSearch(searchQuery);
+      setCountries(countries)
+    }
+    catch (e) {
+      console.error(e);
+      setCountries([]);
+    }
+    finally {
+      setIsLoading(false);
+    }
+  }
+
+  const noOptionsMessage7 = (obj: { inputValue: string }) => {
+    if (obj.inputValue.trim().length === 0) {
+      return null
+    }
+    return "No matching results"
+  }
+
   return (
     <>
-      <Example name="0. Initial state">
+      <Example name="React-Select dropdown without customizations">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           isSearchable={true}
         />
       </Example>
 
-      <Example name="1. Remove the dropdown indicator separator">
+      <Example name="Remove the dropdown indicator separator">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           isSearchable={true}
           components={{
@@ -32,9 +116,9 @@ const Examples: FC = () => {
         />
       </Example>
 
-      <Example name="2. Replace the dropdown indicator icon">
+      <Example name="Replace the dropdown indicator icon">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           isSearchable={true}
           components={{
@@ -44,9 +128,9 @@ const Examples: FC = () => {
         />
       </Example>
 
-      <Example name="3. Move the dropdown icon to the left">
+      <Example name="Move the dropdown icon to the left">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           isSearchable={true}
           components={{
@@ -57,9 +141,9 @@ const Examples: FC = () => {
         />
       </Example>
 
-      <Example name="4. Move the clear icon to the right">
+      <Example name="Move the clear icon to the right">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           components={{
             IndicatorSeparator: () => null,
@@ -69,9 +153,9 @@ const Examples: FC = () => {
         />
       </Example>
 
-      <Example name="5. Prevent clearing value on blur">
+      <Example name="Prevent clearing value on blur">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           components={{
             IndicatorSeparator: () => null,
@@ -83,9 +167,9 @@ const Examples: FC = () => {
         />
       </Example>
 
-      <Example name="6. Display custom data in options">
+      <Example name="Display custom data in options">
         <Select
-          options={demoOptions}
+          options={countriesLocal}
           isClearable={true}
           components={{
             IndicatorSeparator: () => null,
@@ -96,6 +180,65 @@ const Examples: FC = () => {
           inputValue={inputText}
           onInputChange={handleInputChange}
         />
+      </Example>
+
+      <Example name="Search by remote data">
+        <Select
+          options={countries}
+          isClearable={true}
+          components={{
+            IndicatorSeparator: () => null,
+            DropdownIndicator
+          }}
+          styles={customStyles5}
+          formatOptionLabel={formatOptionLabel}
+          inputValue={inputText}
+          //
+          onInputChange={handleInputChange7}
+          isLoading={isLoading}
+          filterOption={null}
+          noOptionsMessage={noOptionsMessage7}
+        />
+      </Example>
+
+      <Example name="Search by remote data with debounching">
+        <Select
+          options={countries}
+          isClearable={true}
+          components={{
+            IndicatorSeparator: () => null,
+            DropdownIndicator
+          }}
+          styles={customStyles5}
+          formatOptionLabel={formatOptionLabel}
+          inputValue={inputText}
+          onInputChange={handleInputChange8}
+          isLoading={isLoading}
+          filterOption={null}
+          noOptionsMessage={noOptionsMessage7}
+        />
+      </Example>
+
+      <Example name="Search by remote data with debounching and caching">
+        <>
+          {error && 'An error has occurred'}
+
+          <Select
+            options={data}
+            isClearable={true}
+            components={{
+              IndicatorSeparator: () => null,
+              DropdownIndicator
+            }}
+            styles={customStyles5}
+            formatOptionLabel={formatOptionLabel}
+            inputValue={inputText}
+            onInputChange={handleInputChange9}
+            isLoading={isLoadingData}
+            filterOption={null}
+            noOptionsMessage={noOptionsMessage7}
+          />
+        </>
       </Example>
     </>
   )
@@ -143,27 +286,27 @@ const customStyles5 = {
   }),
 }
 
-const formatOptionLabel = (option: IOption) => {
+const formatOptionLabel = (option: ICountryOption) => {
   return (
     <div style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-between' }}>
       <div style={{ flexGrow: '1', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
         {option.label}
       </div>
       <div style={{ textAlign: 'right', color: 'green' }}>
-        {option.population}m
+        {option.population / 1000}m
       </div>
     </div>
   )
 }
 
-interface IOption {
+interface ICountryOption {
   label: string;
   value: string;
   population: number;
 }
 
-const demoOptions: IOption[] = [
-  { label: 'China', value: 'china', population: 1402 },
-  { label: 'India', value: 'india', population: 1380 },
-  { label: 'USA', value: 'usa', population: 330 },
+const countriesLocal: ICountryOption[] = [
+  { label: 'China', value: 'china', population: 1402000 },
+  { label: 'India', value: 'india', population: 1380000 },
+  { label: 'USA', value: 'usa', population: 330000 },
 ];
