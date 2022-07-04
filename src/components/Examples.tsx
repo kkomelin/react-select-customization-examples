@@ -3,7 +3,9 @@ import { FC, useRef, useState } from "react";
 import { useQuery } from 'react-query';
 import Select, { components, InputActionMeta } from "react-select";
 import ExampleClearIconToRight from './ExampleClearIconToRight';
+import ExampleCustomDataInOptions from './ExampleCustomDataInOptions';
 import ExampleCustomDropdownIcon from './ExampleCustomDropdownIcon';
+import ExampleDisableClearingValueOnBlur from './ExampleDisableClearingValueOnBlur';
 import ExampleDropdownIconToLeft from './ExampleDropdownIconToLeft';
 import ExampleNoCustomizations from './ExampleNoCustomizations';
 import ExampleNoDropdownSeparator from './ExampleNoDropdownSeparator';
@@ -112,34 +114,9 @@ const Examples: FC = () => {
 
       <ExampleClearIconToRight />
 
-      <ExampleTemplate name="Prevent clearing value on blur">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          components={{
-            IndicatorSeparator: () => null,
-            DropdownIndicator
-          }}
-          styles={customStyles4}
-          inputValue={inputText}
-          onInputChange={handleInputChange}
-        />
-      </ExampleTemplate>
+      <ExampleDisableClearingValueOnBlur />
 
-      <ExampleTemplate name="Display custom data in options">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          components={{
-            IndicatorSeparator: () => null,
-            DropdownIndicator
-          }}
-          styles={customStyles5}
-          formatOptionLabel={formatOptionLabel}
-          inputValue={inputText}
-          onInputChange={handleInputChange}
-        />
-      </ExampleTemplate>
+      <ExampleCustomDataInOptions />
 
       <ExampleTemplate name="Search by remote data">
         <Select
