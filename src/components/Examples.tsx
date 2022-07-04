@@ -2,7 +2,9 @@ import debounce from 'lodash.debounce';
 import { FC, useRef, useState } from "react";
 import { useQuery } from 'react-query';
 import Select, { components, InputActionMeta } from "react-select";
+import ExampleClearIconToRight from './ExampleClearIconToRight';
 import ExampleCustomDropdownIcon from './ExampleCustomDropdownIcon';
+import ExampleDropdownIconToLeft from './ExampleDropdownIconToLeft';
 import ExampleNoCustomizations from './ExampleNoCustomizations';
 import ExampleNoDropdownSeparator from './ExampleNoDropdownSeparator';
 import ExampleTemplate from "./ExampleTemplate";
@@ -106,30 +108,9 @@ const Examples: FC = () => {
 
       <ExampleCustomDropdownIcon />
 
-      <ExampleTemplate name="Move the dropdown icon to the left">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          isSearchable={true}
-          components={{
-            IndicatorSeparator: () => null,
-            DropdownIndicator
-          }}
-          styles={customStyles3}
-        />
-      </ExampleTemplate>
+      <ExampleDropdownIconToLeft />
 
-      <ExampleTemplate name="Move the clear icon to the right">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          components={{
-            IndicatorSeparator: () => null,
-            DropdownIndicator
-          }}
-          styles={customStyles4}
-        />
-      </ExampleTemplate>
+      <ExampleClearIconToRight />
 
       <ExampleTemplate name="Prevent clearing value on blur">
         <Select
