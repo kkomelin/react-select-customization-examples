@@ -2,7 +2,10 @@ import debounce from 'lodash.debounce';
 import { FC, useRef, useState } from "react";
 import { useQuery } from 'react-query';
 import Select, { components, InputActionMeta } from "react-select";
-import Example from "./Example";
+import ExampleCustomDropdownIcon from './ExampleCustomDropdownIcon';
+import ExampleNoCustomizations from './ExampleNoCustomizations';
+import ExampleNoDropdownSeparator from './ExampleNoDropdownSeparator';
+import ExampleTemplate from "./ExampleTemplate";
 
 const API_URL = 'https://countries-for-blog.vercel.app/api/countries';
 
@@ -97,38 +100,13 @@ const Examples: FC = () => {
 
   return (
     <>
-      <Example name="React-Select dropdown without customizations">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          isSearchable={true}
-        />
-      </Example>
+      <ExampleNoCustomizations />
 
-      <Example name="Remove the dropdown indicator separator">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          isSearchable={true}
-          components={{
-            IndicatorSeparator: () => null,
-          }}
-        />
-      </Example>
+      <ExampleNoDropdownSeparator />
 
-      <Example name="Replace the dropdown indicator icon">
-        <Select
-          options={countriesLocal}
-          isClearable={true}
-          isSearchable={true}
-          components={{
-            IndicatorSeparator: () => null,
-            DropdownIndicator
-          }}
-        />
-      </Example>
+      <ExampleCustomDropdownIcon />
 
-      <Example name="Move the dropdown icon to the left">
+      <ExampleTemplate name="Move the dropdown icon to the left">
         <Select
           options={countriesLocal}
           isClearable={true}
@@ -139,9 +117,9 @@ const Examples: FC = () => {
           }}
           styles={customStyles3}
         />
-      </Example>
+      </ExampleTemplate>
 
-      <Example name="Move the clear icon to the right">
+      <ExampleTemplate name="Move the clear icon to the right">
         <Select
           options={countriesLocal}
           isClearable={true}
@@ -151,9 +129,9 @@ const Examples: FC = () => {
           }}
           styles={customStyles4}
         />
-      </Example>
+      </ExampleTemplate>
 
-      <Example name="Prevent clearing value on blur">
+      <ExampleTemplate name="Prevent clearing value on blur">
         <Select
           options={countriesLocal}
           isClearable={true}
@@ -165,9 +143,9 @@ const Examples: FC = () => {
           inputValue={inputText}
           onInputChange={handleInputChange}
         />
-      </Example>
+      </ExampleTemplate>
 
-      <Example name="Display custom data in options">
+      <ExampleTemplate name="Display custom data in options">
         <Select
           options={countriesLocal}
           isClearable={true}
@@ -180,9 +158,9 @@ const Examples: FC = () => {
           inputValue={inputText}
           onInputChange={handleInputChange}
         />
-      </Example>
+      </ExampleTemplate>
 
-      <Example name="Search by remote data">
+      <ExampleTemplate name="Search by remote data">
         <Select
           options={countries}
           isClearable={true}
@@ -199,9 +177,9 @@ const Examples: FC = () => {
           filterOption={null}
           noOptionsMessage={noOptionsMessage7}
         />
-      </Example>
+      </ExampleTemplate>
 
-      <Example name="Search by remote data with debounching">
+      <ExampleTemplate name="Search by remote data with debounching">
         <Select
           options={countries}
           isClearable={true}
@@ -217,9 +195,9 @@ const Examples: FC = () => {
           filterOption={null}
           noOptionsMessage={noOptionsMessage7}
         />
-      </Example>
+      </ExampleTemplate>
 
-      <Example name="Search by remote data with debounching and caching">
+      <ExampleTemplate name="Search by remote data with debounching and caching">
         <>
           {error && 'An error has occurred'}
 
@@ -239,7 +217,7 @@ const Examples: FC = () => {
             noOptionsMessage={noOptionsMessage7}
           />
         </>
-      </Example>
+      </ExampleTemplate>
     </>
   )
 }
