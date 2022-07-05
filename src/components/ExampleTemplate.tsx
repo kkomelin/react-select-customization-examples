@@ -1,11 +1,11 @@
-import { FC, PropsWithChildren } from "react";
-import styles from './ExampleTemplate.module.css';
+import { FC, PropsWithChildren } from 'react'
+import styles from './ExampleTemplate.module.css'
 
 type Props = {
-  name: string;
+  name: string
 }
 const ExampleTemplate: FC<PropsWithChildren<Props>> = ({ children, name }) => {
-  const { componentStyles, labelStyles } = styles;
+  const { componentStyles, labelStyles } = styles
 
   return (
     <div className={componentStyles}>
@@ -15,4 +15,4 @@ const ExampleTemplate: FC<PropsWithChildren<Props>> = ({ children, name }) => {
   )
 }
 
-export default ExampleTemplate;
+export default ExampleTemplate

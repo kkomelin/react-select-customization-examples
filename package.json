@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.7",
-    "@types/react-query": "^1.2.9"
+    "@types/react-query": "^1.2.9",
+    "prettier": "^2.7.1"
   }
 }

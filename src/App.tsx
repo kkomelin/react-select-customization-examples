@@ -1,8 +1,8 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-import './App.css';
-import Examples from './components/Examples';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import './App.css'
+import Examples from './components/Examples'
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Examples />
       </div>
     </QueryClientProvider>
-  );
+  )
 }
 
-export default App;
+export default App
