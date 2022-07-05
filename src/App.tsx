@@ -8,7 +8,15 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <h1>React Select Examples</h1>
+        <a
+          style={{ color: 'darkblue', textAlign: 'center' }}
+          href="https://komelin.com/..."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read Tutorial
+        </a>
+        <h1>React Select Tutorial Examples</h1>
 
         <Examples />
       </div>
