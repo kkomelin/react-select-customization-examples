@@ -1,8 +1,22 @@
 .componentStyles {
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  counter-increment: example;
+  position: relative;
+}
+.componentStyles:before {
+  position: absolute;
+  content: counter(example);
+  min-width: 1.5rem;
+  font-weight: bold;
+  text-align:right;
+  margin-left: -2rem;
+  color: darkcyan;
 }
 .labelStyles {
-  padding-bottom: 0.7rem;
+  padding-bottom: 1rem;
   font-weight: 500;
   display: block;
+  cursor: pointer;
+  color: darkcyan;
 }

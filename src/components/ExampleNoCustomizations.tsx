@@ -3,7 +3,10 @@ import ExampleTemplate from './ExampleTemplate'
 
 const ExampleNoCustomizations = () => {
   return (
-    <ExampleTemplate name="React-Select dropdown without customizations">
+    <ExampleTemplate
+      name="Dropdown without customizations"
+      isVisible={true}
+    >
       <Select options={countriesLocal} isClearable={true} isSearchable={true} />
     </ExampleTemplate>
   )
