@@ -9,14 +9,14 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="App">
         <a
-          style={{ color: 'darkblue', textAlign: 'center' }}
+          style={{ color: 'darkcyan', textAlign: 'center' }}
           href="https://komelin.com/..."
           target="_blank"
           rel="noopener noreferrer"
         >
           Read Tutorial
         </a>
-        <h1>React Select Tutorial Examples</h1>
+        <h1>React Select Customization Examples</h1>
 
         <Examples />
       </div>
