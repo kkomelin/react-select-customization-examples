@@ -14,7 +14,6 @@ yarn start
 
 It will open [http://localhost:3000](http://localhost:3000) in the browser automatically.
 
-
-### Checkout the hosted version
+## Check out the hosted version
 
 Open [https://react-select-customization-examples.vercel.app/](https://react-select-customization-examples.vercel.app/)
