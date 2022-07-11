@@ -4,12 +4,19 @@
   flex-direction: column;
   justify-content: center;
   alight-items: center;
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 1.5rem 2rem 4rem 2rem;
   max-width: 30rem;
   color: #444444;
 }
 
 .App h1 {
   text-align:center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.App .top-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
 }
