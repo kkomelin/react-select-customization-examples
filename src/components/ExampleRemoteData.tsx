@@ -4,7 +4,7 @@ import ExampleTemplate from './ExampleTemplate'
 
 const API_URL = 'https://countries-api-for-blog.vercel.app/api/countries'
 
-const apiSearch = async (searchText: string) => {
+const searchRequest = async (searchText: string) => {
   try {
     const response = await fetch(
       `${API_URL}${searchText ? '/' + searchText : ''}`
@@ -34,9 +34,10 @@ const ExampleRemoteData = () => {
       return
     }
 
+    setIsLoading(true)
+
     try {
-      setIsLoading(true)
-      const countries = await apiSearch(searchQuery)
+      const countries = await searchRequest(searchQuery)
       setCountries(countries)
     } catch (e) {
       console.error(e)
