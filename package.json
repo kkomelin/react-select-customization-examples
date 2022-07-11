@@ -1,6 +1,13 @@
 {
   "name": "react-select-customization-examples",
   "version": "0.1.0",
+  "repository": "kkomelin/react-select-customization-examples",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-select",
+    "react-query"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -45,5 +52,8 @@
     "@types/lodash.debounce": "^4.0.7",
     "@types/react-query": "^1.2.9",
     "prettier": "^2.7.1"
+  },
+  "bugs": {
+    "url": "https://github.com/kkomelin/react-select-customization-examples/issues"
   }
 }
