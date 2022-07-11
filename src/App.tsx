@@ -19,7 +19,7 @@ function App() {
           </a>
           <a
             style={{ color: 'darkcyan', textAlign: 'center' }}
-            href="https://github.com/kkomelin/nextjs-image-optimization-examples"
+            href="https://github.com/kkomelin/react-select-customization-examples"
             target="_blank"
             rel="noopener noreferrer"
           >
