@@ -16,7 +16,9 @@
 .labelStyles {
   padding-bottom: 1rem;
   font-weight: 500;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   cursor: pointer;
   color: darkcyan;
 }

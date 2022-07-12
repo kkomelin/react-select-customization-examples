@@ -20,7 +20,7 @@ const ExampleTemplate: FC<PropsWithChildren<Props>> = ({
         className={labelStyles}
         onClick={() => setIsComponentVisible(!isComponentVisible)}
       >
-        {name} &raquo;
+        {name} <Chevron down={!isComponentVisible} />
       </label>
       {isComponentVisible && <div>{children}</div>}
     </div>
@@ -28,3 +28,17 @@ const ExampleTemplate: FC<PropsWithChildren<Props>> = ({
 }
 
 export default ExampleTemplate
+
+type ChevronProps = {
+  down?: boolean
+}
+const Chevron: FC<ChevronProps> = ({ down = true }) => (
+  <span
+    style={{
+      transform: down ? 'rotate(180deg)' : 'none',
+      padding: '0 4px',
+    }}
+  >
+    &#x25B2;
+  </span>
+)
