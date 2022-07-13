@@ -7,9 +7,7 @@ Code examples for the [Developing a Custom Search Box With React-Select](...) po
 To run the examples on your local machine, clone the project and run:
 
 ```bash
-npm start
-# or
-yarn start
+npm start || yarn start
 ```
 
 It will open [http://localhost:3000](http://localhost:3000) in the browser automatically.
