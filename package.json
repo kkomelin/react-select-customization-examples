@@ -37,9 +37,7 @@
     "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
     "react-select": "^5.4.0",
-    "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -51,7 +49,9 @@
     "@types/node": "^18.6.4",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.5",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.7.4"
   },
   "bugs": {
     "url": "https://github.com/kkomelin/react-select-customization-examples/issues"
