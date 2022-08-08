@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './App.css'
 import Examples from './components/Examples'
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <div className='top-links'>
+        <div className="top-links">
           <a
             style={{ color: 'darkcyan', textAlign: 'center' }}
             href="https://komelin.com/developing-custom-search-box-with-react-select"

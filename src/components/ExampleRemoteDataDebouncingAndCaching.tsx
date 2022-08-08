@@ -1,6 +1,6 @@
+import { useQuery } from '@tanstack/react-query'
 import debounce from 'lodash.debounce'
 import { useRef, useState } from 'react'
-import { useQuery } from 'react-query'
 import Select, { components, InputActionMeta } from 'react-select'
 import ExampleTemplate from './ExampleTemplate'
 
@@ -22,12 +22,8 @@ const ExampleRemoteDataDebouncingAndCaching = () => {
   const [inputText, setInputText] = useState<string>('')
   const [searchText, setSearchText] = useState<string>('')
 
-  const {
-    isLoading: isLoadingData,
-    error,
-    data,
-  } = useQuery(
-    searchText && ['countryData', searchText],
+  const { isLoading, error, data } = useQuery(
+    searchText ? ['countryData', searchText] : ['countryData'],
     async () => await performSearchRequest(searchText),
     {
       enabled: !!searchText,
@@ -68,7 +64,7 @@ const ExampleRemoteDataDebouncingAndCaching = () => {
           formatOptionLabel={formatOptionLabel}
           inputValue={inputText}
           onInputChange={handleInputChange}
-          isLoading={isLoadingData}
+          isLoading={!!searchText && isLoading}
           filterOption={null}
           noOptionsMessage={noOptionsMessage}
         />
