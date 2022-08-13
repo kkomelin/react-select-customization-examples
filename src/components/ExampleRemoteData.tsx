@@ -55,7 +55,10 @@ const ExampleRemoteData = () => {
   }
 
   return (
-    <ExampleTemplate name="Search by remote data">
+    <ExampleTemplate
+      name="8. Search by remote data"
+      filename="ExampleRemoteData.tsx"
+    >
       <Select
         options={countries}
         isClearable={true}

@@ -3,7 +3,10 @@ import ExampleTemplate from './ExampleTemplate'
 
 const ExampleNoDropdownSeparator = () => {
   return (
-    <ExampleTemplate name="Remove the dropdown indicator separator">
+    <ExampleTemplate
+      name="2. Remove the dropdown indicator separator"
+      filename="ExampleNoDropdownSeparator.tsx"
+    >
       <Select
         options={countriesLocal}
         isClearable={true}

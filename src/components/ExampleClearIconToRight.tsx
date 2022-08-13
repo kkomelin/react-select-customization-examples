@@ -3,7 +3,10 @@ import ExampleTemplate from './ExampleTemplate'
 
 const ExampleClearIconToRight = () => {
   return (
-    <ExampleTemplate name="Move the clear icon to the right">
+    <ExampleTemplate
+      name="5. Move the clear icon to the right"
+      filename="ExampleClearIconToRight.tsx"
+    >
       <Select
         options={countriesLocal}
         isClearable={true}

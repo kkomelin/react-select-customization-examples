@@ -4,8 +4,8 @@ import ExampleTemplate from './ExampleTemplate'
 const ExampleNoCustomizations = () => {
   return (
     <ExampleTemplate
-      name="Dropdown without customizations"
-      isVisible={true}
+      name="1. Dropdown without customizations"
+      filename="ExampleNoCustomizations.tsx"
     >
       <Select options={countriesLocal} isClearable={true} isSearchable={true} />
     </ExampleTemplate>

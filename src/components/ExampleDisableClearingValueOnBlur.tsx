@@ -12,7 +12,10 @@ const ExampleDisableClearingValueOnBlur = () => {
   }
 
   return (
-    <ExampleTemplate name="Prevent clearing value on blur">
+    <ExampleTemplate
+      name="6. Prevent clearing value on blur"
+      filename="ExampleDisableClearingValueOnBlur.tsx"
+    >
       <Select
         options={countriesLocal}
         isClearable={true}

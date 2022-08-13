@@ -3,7 +3,10 @@ import ExampleTemplate from './ExampleTemplate'
 
 const ExampleDropdownIconToLeft = () => {
   return (
-    <ExampleTemplate name="Move the dropdown icon to the left">
+    <ExampleTemplate
+      name="4. Move the dropdown icon to the left"
+      filename="ExampleDropdownIconToLeft.tsx"
+    >
       <Select
         options={countriesLocal}
         isClearable={true}

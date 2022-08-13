@@ -60,7 +60,10 @@ const ExampleRemoteDataDebouncing = () => {
   }
 
   return (
-    <ExampleTemplate name="Search by remote data with debouncing">
+    <ExampleTemplate
+      name="9. Search by remote data with debouncing"
+      filename="ExampleRemoteDataDebouncing.tsx"
+    >
       <Select
         options={countries}
         isClearable={true}

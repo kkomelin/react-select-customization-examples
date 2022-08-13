@@ -3,7 +3,10 @@ import ExampleTemplate from './ExampleTemplate'
 
 const ExampleCustomDropdownIcon = () => {
   return (
-    <ExampleTemplate name="Replace the dropdown indicator icon">
+    <ExampleTemplate
+      name="3. Replace the dropdown indicator icon"
+      filename="ExampleCustomDropdownIcon.tsx"
+    >
       <Select
         options={countriesLocal}
         isClearable={true}

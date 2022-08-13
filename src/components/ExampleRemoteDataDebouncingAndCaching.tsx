@@ -49,7 +49,10 @@ const ExampleRemoteDataDebouncingAndCaching = () => {
   }
 
   return (
-    <ExampleTemplate name="Search by remote data with debouncing and caching">
+    <ExampleTemplate
+      name="10. Search by remote data with debouncing and caching"
+      filename="ExampleRemoteDataDebouncingAndCaching.tsx"
+    >
       <>
         {error && 'An error has occurred'}
 

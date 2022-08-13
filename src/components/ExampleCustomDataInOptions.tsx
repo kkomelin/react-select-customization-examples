@@ -12,7 +12,10 @@ const ExampleCustomDataInOptions = () => {
   }
 
   return (
-    <ExampleTemplate name="Display custom data in options">
+    <ExampleTemplate
+      name="7. Display custom data in options"
+      filename="ExampleCustomDataInOptions.tsx"
+    >
       <Select
         options={countriesLocal}
         isClearable={true}
