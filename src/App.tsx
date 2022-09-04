@@ -11,7 +11,7 @@ function App() {
         <div className="top-links">
           <a
             style={{ color: 'darkcyan', textAlign: 'center' }}
-            href="https://komelin.com/developing-custom-search-box-with-react-select"
+            href="https://komelin.com/articles/developing-custom-search-box-with-react-select"
             target="_blank"
             rel="noopener noreferrer"
           >
