@@ -1,6 +1,6 @@
 # React Select Customization Examples
 
-Code examples for the [Developing a Custom Search Box With React-Select](https://komelin.com/developing-custom-search-box-with-react-select) post.
+Code examples for the [Developing a Custom Search Box With React-Select](https://komelin.com/developing-custom-search-box-with-react-select) tutorial.
 
 ## Play locally
 
