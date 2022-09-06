@@ -1,12 +1,13 @@
 # React Select Customization Examples
 
-Code examples for the [Developing a Custom Search Box With React-Select](https://komelin.com/developing-custom-search-box-with-react-select) tutorial.
+Code examples for the [Developing a Custom Search Box With React-Select](https://komelin.com/articles/developing-custom-search-box-with-react-select) tutorial.
 
 ## Play locally
 
-To run the examples on your local machine, clone the project and run:
+Clone the project and run:
 
 ```bash
+yarn install || npm install
 yarn start || npm start
 ```
 
