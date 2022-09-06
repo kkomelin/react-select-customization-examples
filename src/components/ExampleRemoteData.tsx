@@ -5,15 +5,10 @@ import ExampleTemplate from './ExampleTemplate'
 const API_URL = 'https://countries-api-for-blog.vercel.app/api/countries'
 
 const performSearchRequest = async (searchText: string) => {
-  try {
-    const response = await fetch(
-      `${API_URL}${searchText ? '/' + searchText : ''}`
-    )
-    return await response.json()
-  } catch (error) {
-    console.error(error)
-    return []
-  }
+  const response = await fetch(
+    `${API_URL}${searchText ? '/' + searchText : ''}`
+  )
+  return await response.json()
 }
 
 const ExampleRemoteData = () => {
@@ -36,13 +31,13 @@ const ExampleRemoteData = () => {
 
     setIsLoading(true)
 
+    let countries = []
     try {
-      const countries = await performSearchRequest(searchQuery)
-      setCountries(countries)
+      countries = await performSearchRequest(searchQuery)
     } catch (e) {
       console.error(e)
-      setCountries([])
     } finally {
+      setCountries(countries)
       setIsLoading(false)
     }
   }
