@@ -46,7 +46,7 @@ const ExampleRemoteData = () => {
     if (obj.inputValue.trim().length === 0) {
       return null
     }
-    return 'No matching results'
+    return 'No matching countries'
   }
 
   return (
