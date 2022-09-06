@@ -31,6 +31,7 @@ const Examples: FC = () => {
 
       <ExampleRemoteDataDebouncing />
 
+      <span id="final" />
       <ExampleRemoteDataDebouncingAndCaching />
     </>
   )
