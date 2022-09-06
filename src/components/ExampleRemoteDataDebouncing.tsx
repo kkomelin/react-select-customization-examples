@@ -3,11 +3,11 @@ import { useRef, useState } from 'react'
 import Select, { components, InputActionMeta } from 'react-select'
 import ExampleTemplate from './ExampleTemplate'
 
-const API_URL = 'https://countries-api-for-blog.vercel.app/api/countries'
-
 const performSearchRequest = async (searchText: string) => {
   const response = await fetch(
-    `${API_URL}${searchText ? '/' + searchText : ''}`
+    `https://countries-api-for-blog.vercel.app/api/countries${
+      searchText ? '/' + searchText : ''
+    }`
   )
   return await response.json()
 }
