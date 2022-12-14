@@ -33,25 +33,25 @@
     ]
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.2.3",
+    "@tanstack/react-query": "^4.20.2",
     "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-select": "^5.4.0",
-    "web-vitals": "^3.0.1"
+    "react-select": "^5.7.0",
+    "web-vitals": "^3.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.2",
-    "@types/jest": "^29.0.0",
+    "@types/jest": "^29.2.4",
     "@types/lodash.debounce": "^4.0.7",
-    "@types/node": "^18.7.15",
-    "@types/react": "^18.0.18",
-    "@types/react-dom": "^18.0.5",
-    "prettier": "^2.7.1",
+    "@types/node": "^18.11.15",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "prettier": "^2.8.1",
     "react-scripts": "^5.0.1",
-    "typescript": "^4.8.2"
+    "typescript": "^4.9.4"
   },
   "bugs": {
     "url": "https://github.com/kkomelin/react-select-customization-examples/issues"
