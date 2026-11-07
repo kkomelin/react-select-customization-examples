@@ -1,7 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content:left;
+  justify-content: left;
   alight-items: center;
   padding: 1.5rem 2rem 4rem 2rem;
   max-width: 30rem;
