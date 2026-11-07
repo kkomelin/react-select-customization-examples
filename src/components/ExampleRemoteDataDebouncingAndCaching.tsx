@@ -17,13 +17,13 @@ const ExampleRemoteDataDebouncingAndCaching = () => {
   const [inputText, setInputText] = useState<string>('')
   const [searchText, setSearchText] = useState<string>('')
 
-  const { isLoading, error, data } = useQuery(
-    searchText ? ['countryData', searchText] : ['countryData'],
-    async () => await performSearchRequest(searchText),
-    {
-      enabled: !!searchText,
-    }
-  )
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['countryData', searchText],
+    queryFn: () => performSearchRequest(searchText),
+    enabled: !!searchText,
+    // Reuse cached results for 5 minutes instead of refetching them.
+    staleTime: 5 * 60 * 1000,
+  })
 
   const handleSearchDebounced = useRef(
     debounce((searchText) => setSearchText(searchText), 300)
@@ -62,7 +62,7 @@ const ExampleRemoteDataDebouncingAndCaching = () => {
           formatOptionLabel={formatOptionLabel}
           inputValue={inputText}
           onInputChange={handleInputChange}
-          isLoading={!!searchText && isLoading}
+          isLoading={isLoading}
           filterOption={null}
           noOptionsMessage={noOptionsMessage}
         />

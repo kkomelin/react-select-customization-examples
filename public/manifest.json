@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Select Examples",
+  "name": "React Select Customization Examples",
   "icons": [
     {
       "src": "favicon.ico",
